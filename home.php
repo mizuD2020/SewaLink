@@ -141,7 +141,7 @@ if (!isset($_SESSION['worker_id'])) {
     $_SESSION['worker_id'] = 1;
 }
 
-$workers = Worker::getWorkers();
+$workers = MockData::getWorkers();
 $bookings = MockData::getBookings();
 $categories = MockData::getCategories();
 ?>
@@ -444,7 +444,8 @@ $categories = MockData::getCategories();
                                                             <td><?= $booking['user_name'] ?></td>
                                                             <td><?= $booking['service'] ?></td>
                                                             <td><?= date('M j, Y', strtotime($booking['date'])) ?> at
-                                                                <?= $booking['time'] ?></td>
+                                                                <?= $booking['time'] ?>
+                                                            </td>
                                                             <td>
                                                                 <span
                                                                     class="badge bg-<?= $booking['status'] === 'confirmed' ? 'success' : 'warning' ?>">
